@@ -1,0 +1,4 @@
+[submodule "alertmanager"]
+	path = alertmanager
+	url = https://github.com/prometheus/alertmanager
+        branch = main
