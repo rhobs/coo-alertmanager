@@ -5,7 +5,7 @@ FROM quay.io/prometheus/golang-builder:${GOLANG_BUILDER}-base as builder
 WORKDIR /workspace
 
 # Copy source files
-COPY alertmanager/ /workspace/
+COPY alertmanager/ .
 
 # Build
 ENV NO_DOCKER=true
