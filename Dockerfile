@@ -8,7 +8,8 @@ WORKDIR /workspace
 COPY alertmanager/ /workspace/
 
 # Build
-RUN make common-build
+ENV NO_DOCKER=true
+RUN make build
 
 FROM quay.io/prometheus/busybox-${OS}-${ARCH}:latest
 
