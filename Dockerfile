@@ -13,6 +13,8 @@ RUN make build
 
 FROM quay.io/prometheus/busybox-${OS}-${ARCH}:latest
 
+ARG ARCH="amd64"
+ARG OS="linux"
 COPY --from=builder workspace/.build/${OS}-${ARCH}/amtool       /bin/amtool
 COPY --from=builder workspace/.build/${OS}-${ARCH}/alertmanager /bin/alertmanager
 COPY --from=builder workspace/examples/ha/alertmanager.yml      /etc/alertmanager/alertmanager.yml
