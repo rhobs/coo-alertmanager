@@ -8,7 +8,7 @@ WORKDIR /workspace
 COPY alertmanager/ /workspace/
 
 # Build
-RUN make assets build
+RUN make build-common
 
 FROM quay.io/prometheus/busybox-${OS}-${ARCH}:latest
 
