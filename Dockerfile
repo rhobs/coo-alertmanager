@@ -5,12 +5,10 @@ FROM quay.io/prometheus/golang-builder:${GOLANG_BUILDER}-base as builder
 WORKDIR /workspace
 
 # Copy source files
-COPY alertmanager/ .
+COPY alertmanager/ /workspace/
 
 # Build
 RUN make build-all
-
-FROM quay.io/prometheus/busybox-${OS}-${ARCH}:latest
 
 FROM quay.io/prometheus/busybox-${OS}-${ARCH}:latest
 
